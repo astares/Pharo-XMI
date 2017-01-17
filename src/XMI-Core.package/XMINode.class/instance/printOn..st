@@ -1,8 +1,7 @@
 printing
 printOn: aStream
-
-	prefix ifNotNil: [
-		aStream nextPutAll: self prefix.
-		prefix ifNotEmpty: [ aStream nextPut: $: ]].
-	aStream nextPutAll: self name asString		
-	
+	self attributes
+		ifNotNil: [ self attributes
+				at: 'name'
+				ifPresent: [ :name | self printWithName: name on: aStream ]
+				ifAbsent: [ self printAsNodeOn: aStream ] ]

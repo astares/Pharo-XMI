@@ -7,9 +7,9 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"prefix",
-		"name",
 		"children",
-		"attributes"
+		"attributes",
+		"tagName"
 	],
 	"name" : "XMINode",
 	"type" : "normal"
