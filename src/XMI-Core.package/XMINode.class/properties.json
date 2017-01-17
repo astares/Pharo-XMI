@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "TorstenBergmann 1/17/2017 03:35",
+	"super" : "Object",
+	"category" : "XMI-Core-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"prefix",
+		"name",
+		"children",
+		"attributes"
+	],
+	"name" : "XMINode",
+	"type" : "normal"
+}
