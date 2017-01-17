@@ -14,7 +14,7 @@ gtInspectorAttributesIn: composite
 						ifTrue: [ each value collectWithIndex: [:x :i | i -> x ] ]
 						ifFalse: [ #() ] ] ];
 		column: 'Key' 
-			evaluated: [:each |   each key asString ];
+			evaluated: [:each | each key asString ];
 		column: 'Value' 
-			evaluated: [:each |  each value asString]
+			evaluated: [:each | each value asString]
 		 
