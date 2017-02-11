@@ -1,0 +1,1 @@
+Baseline for Pharo-XMI project
