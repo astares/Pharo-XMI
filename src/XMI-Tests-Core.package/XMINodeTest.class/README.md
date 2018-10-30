@@ -1,1 +1,0 @@
-A unit test for XMINode
