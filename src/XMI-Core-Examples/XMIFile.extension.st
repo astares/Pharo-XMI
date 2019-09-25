@@ -1,6 +1,6 @@
 Extension { #name : #XMIFile }
 
-{ #category : #'*XMI-Examples-Model' }
+{ #category : #'*XMI-Core-Examples-Model' }
 XMIFile class >> exampleArchimate [
 	<example>
 	
@@ -8,14 +8,14 @@ XMIFile class >> exampleArchimate [
 
 ]
 
-{ #category : #'*XMI-Examples-Model' }
+{ #category : #'*XMI-Core-Examples-Model' }
 XMIFile class >> exampleEnterpriseArchitectXMI [
 	<example>
 	
 	^(self fromURL: 'https://raw.githubusercontent.com/staruml/XMI/master/unittest-files/EA_XMI21.xmi') inspect
 ]
 
-{ #category : #'*XMI-Examples-Model' }
+{ #category : #'*XMI-Core-Examples-Model' }
 XMIFile class >> exampleUML [
 	<example>
 	
@@ -23,7 +23,7 @@ XMIFile class >> exampleUML [
 
 ]
 
-{ #category : #'*XMI-Examples-Model' }
+{ #category : #'*XMI-Core-Examples-Model' }
 XMIFile class >> exampleVisualParadigm [
 	<example>
 	
