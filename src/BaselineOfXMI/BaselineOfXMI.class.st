@@ -13,14 +13,10 @@ BaselineOfXMI >> baseline: spec [
 	spec
 		for: #common
 		do: [ spec blessing: #baseline.
+			spec baseline: 'XMLParser' with: [ spec repository: 'github://svenvc/XML-Support-Pharo' ].
+			
 			spec
-				project: 'Pastell'
-				with: [ spec
-						className: #ConfigurationOfPastell;
-						versionString: #stable;
-						repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ].
-			spec
-				package: #'XMI-Core';
+				package: #'XMI-Core' with: [ spec requires: #(#'XMLParser')];
 				package: #'XMI-Core-Examples'
 					with: [ spec requires: #(#'XMI-Core') ];
 				package: #'XMI-Tests-Core'
