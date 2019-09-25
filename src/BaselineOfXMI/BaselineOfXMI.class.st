@@ -13,10 +13,13 @@ BaselineOfXMI >> baseline: spec [
 	spec
 		for: #common
 		do: [ spec blessing: #baseline.
-			spec baseline: 'XMLParser' with: [ spec repository: 'github://svenvc/XML-Support-Pharo' ].
-			
 			spec
-				package: #'XMI-Core' with: [ spec requires: #(#'XMLParser')];
+				baseline: 'XMLParser'
+				with: [ spec
+						repository: 'github://svenvc/XML-Support-Pharo';
+						loads: 'core' ].
+			spec
+				package: #'XMI-Core' with: [ spec requires: #(#XMLParser) ];
 				package: #'XMI-Core-Examples'
 					with: [ spec requires: #(#'XMI-Core') ];
 				package: #'XMI-Tests-Core'
