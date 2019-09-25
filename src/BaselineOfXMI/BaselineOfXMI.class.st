@@ -28,7 +28,7 @@ BaselineOfXMI >> baseline: spec [
 				spec requires: #(#'XMI-Core' ). ].
 		spec 
 			group: 'Core' with: #(#'XMI-Core' );
-			group: 'Examples' with: #(#'XMI-Examples' );
+			group: 'Examples' with: #(#'XMI-Core-Examples' );
 			group: 'Tests' with: #(#'XMI-Tests-Core' );
 			group: 'Tools' with: #(#'XMI-Tools' ). ].
 
