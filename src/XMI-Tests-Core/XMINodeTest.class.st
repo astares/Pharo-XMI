@@ -4,7 +4,7 @@ A unit test for XMINode
 Class {
 	#name : #XMINodeTest,
 	#superclass : #TestCase,
-	#category : 'XMI-Tests-Core-Model'
+	#category : #'XMI-Tests-Core-Model'
 }
 
 { #category : #tests }
@@ -64,6 +64,15 @@ XMINodeTest >> testPrintingWithName [
 	| node |
 	node := XMINode from: '<XMI:NamedObject name="Named Thing"/>'.
 	self assert: node printString equals: 'XMI:NamedObject.name = "Named Thing"'
+]
+
+{ #category : #tests }
+XMINodeTest >> testReferenceAttributes [
+
+	| node |
+	node := XMINode from: '<XMI:Node key="value1 value2 value3"/>'.
+	self assert: node attributes size equals: 1.
+	self assert: (node referencesFromAttribute: 'key') equals: #('value1' 'value2' 'value3')
 ]
 
 { #category : #tests }

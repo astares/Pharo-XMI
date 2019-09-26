@@ -10,7 +10,7 @@ Class {
 		'attributes',
 		'tagName'
 	],
-	#category : 'XMI-Core-Model'
+	#category : #'XMI-Core-Model'
 }
 
 { #category : #'instance creation' }
@@ -136,6 +136,14 @@ XMINode >> printOn: aStream [
    self attributes
 				at: 'name'
 				ifPresent: [ :name | self printName: name on: aStream ]
+]
+
+{ #category : #accessing }
+XMINode >> referencesFromAttribute: aKey [
+	
+	|refIds|
+	refIds := self attributes at: aKey ifAbsent: ''.
+   ^refIds substrings: ' '.
 ]
 
 { #category : #accessing }
