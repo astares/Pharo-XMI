@@ -8,6 +8,20 @@ Class {
 }
 
 { #category : #tests }
+XMINodeTest >> testChildrenWithTagName [
+
+	| node childs |
+	node := XMINode from: '<XMI:Node key="value">
+		<XMI:Child name="First"></XMI:Child>
+		<XMI:Child name="Second"></XMI:Child>
+	</XMI:Node>'.
+	childs := node childrenWithTagName: 'Child'.
+	self 
+		assert: childs notEmpty;
+		assert: childs size equals: 2.
+]
+
+{ #category : #tests }
 XMINodeTest >> testInstantiationFromEmptyNode [
 
 	| node |

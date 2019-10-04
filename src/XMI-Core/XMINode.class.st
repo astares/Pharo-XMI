@@ -72,6 +72,11 @@ XMINode >> children: anObject [
 	children := anObject
 ]
 
+{ #category : #'accessing - children' }
+XMINode >> childrenWithTagName: aString [ 
+	^self children select: [:each | each tagName = aString ]
+]
+
 { #category : #testing }
 XMINode >> hasAttribute: attributeName [ 
 	^self attributes includesKey: attributeName
