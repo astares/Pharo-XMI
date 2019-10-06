@@ -3,11 +3,13 @@ Extension { #name : #XMIFile }
 { #category : #'*XMI-Tools-Model' }
 XMIFile class >> importFile [
 	<script>
-	| filename |
-	filename := UITheme builder fileOpen: 'Choose an *.xmi file' extensions: #('xmi' 'xml').
-	filename ifNil: [ ^ self ].
-	self openInspectorOn: (self from: filename contentsOfEntireFile).
-	filename close
+	| file |
+	file := UIManager default chooseExistingFileReference: 'Choose an *.xmi file'
+							extensions: #('xmi' 'xml') 
+							path: ''.
+	file ifNil: [ ^ self ].
+	self openInspectorOn: (self from: file contents).
+ 
 ]
 
 { #category : #'*XMI-Tools-Model' }
