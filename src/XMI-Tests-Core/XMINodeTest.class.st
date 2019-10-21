@@ -96,3 +96,11 @@ XMINodeTest >> testTagName [
 	node := XMINode from: '<XMI:Node/>'.
 	self assert: node tagName equals: 'Node'
 ]
+
+{ #category : #tests }
+XMINodeTest >> testTextStringOnly [
+
+	| node |
+	node := XMINode from: '<XMI.owner>astares.com</XMI.owner>'.
+	self assert: node textString equals: 'astares.com'
+]

@@ -8,7 +8,8 @@ Class {
 		'prefix',
 		'children',
 		'attributes',
-		'tagName'
+		'tagName',
+		'textString'
 	],
 	#category : #'XMI-Core-Model'
 }
@@ -24,10 +25,12 @@ XMINode class >> fromXMLElement: anXMLElement [
 
 	| instance |
 	instance := self new.
-	instance prefix: anXMLElement name xmlPrefixBeforeLocalName.
-	instance tagName: anXMLElement localName.
-	instance attributes: anXMLElement attributes.
-	instance children: (anXMLElement elements collect: [:each | (self fromXMLElement: each)]).
+	instance 
+		prefix: anXMLElement name xmlPrefixBeforeLocalName;
+		tagName: anXMLElement localName;
+		attributes: anXMLElement attributes;
+		children: (anXMLElement elements collect: [:each | (self fromXMLElement: each)]);
+		textString: (anXMLElement hasStringNodes ifTrue: [ anXMLElement strings first ] ifFalse: [ '' ]).
 	^instance
 
 ]
@@ -160,4 +163,14 @@ XMINode >> tagName [
 XMINode >> tagName: anObject [
 
 	tagName := anObject
+]
+
+{ #category : #accessing }
+XMINode >> textString [
+	^ textString
+]
+
+{ #category : #accessing }
+XMINode >> textString: anObject [
+	textString := anObject
 ]
