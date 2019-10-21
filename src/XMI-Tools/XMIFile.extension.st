@@ -17,7 +17,7 @@ XMIFile class >> openInspectorOn: anXMIFile [
  
 	| inspector |
 	inspector := GTInspector new.
- 	inspector title: 'XMI Model'.
+ 	inspector title: 'XMI Model' translated.
  	inspector presentationFilter: 
                (GTInspectorTagFilter new 
                     defaultTag: #xmi;
