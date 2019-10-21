@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'rootNode'
 	],
-	#category : 'XMI-Core-Model'
+	#category : #'XMI-Core-Model'
 }
 
 { #category : #'instance creation' }
@@ -21,7 +21,7 @@ XMIFile class >> fromURL: anURLPointingToAnXMI [
 	
 	|response|
 	response := ZnEasy get: anURLPointingToAnXMI.
-	^self from:response contents
+	^self from: response contents
 ]
 
 { #category : #'instance creation' }
