@@ -149,7 +149,7 @@ ConfigurationOfXMI >> customProjectAttributes [
     ^ #()
 ]
 
-{ #category : #versions }
+{ #category : #'symbolic versions' }
 ConfigurationOfXMI >> dev: spec [
 	<version: 'dev'>
 
@@ -187,9 +187,9 @@ ConfigurationOfXMI >> stable: spec [
 	<symbolicVersion: #'stable'>
 
 	spec for: #'common' version: '0.0.1'.
-	spec for: #'pharo5.x' version: '0.0.3'.
-	spec for: #'pharo6.x' version: '0.0.3'.	
-	spec for: #'pharo7.x' version: '0.0.3'.	
+	spec for: #'pharo5.x' version: '0.0.4'.
+	spec for: #'pharo6.x' version: '0.0.4'.	
+	spec for: #'pharo7.x' version: '0.0.4'.	
 	spec for: #'pharo8.x' version: 'dev'.	
 ]
 
@@ -230,4 +230,17 @@ ConfigurationOfXMI >> v0_0_3: spec [
 				spec 
 					className: 'BaselineOfXMI';
 					repository: 'github://astares/Pharo-XMI:0.0.3/src' ]]
+]
+
+{ #category : #versions }
+ConfigurationOfXMI >> v0_0_4: spec [
+	<version: '0.0.4'>
+
+	spec for: #'common' do: [ 
+		spec blessing: #'stable'.
+		spec
+			baseline: 'XMI' with: [ 
+				spec 
+					className: 'BaselineOfXMI';
+					repository: 'github://astares/Pharo-XMI:0.0.4/src' ]]
 ]
