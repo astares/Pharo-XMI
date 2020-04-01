@@ -186,11 +186,9 @@ ConfigurationOfXMI >> project [
 ConfigurationOfXMI >> stable: spec [
 	<symbolicVersion: #'stable'>
 
-	spec for: #'common' version: '0.0.1'.
-	spec for: #'pharo5.x' version: '0.0.4'.
-	spec for: #'pharo6.x' version: '0.0.4'.	
-	spec for: #'pharo7.x' version: '0.0.4'.	
-	spec for: #'pharo8.x' version: 'dev'.	
+	spec for: #'common' version: '0.0.4'.
+	spec for: #'pharo4.x' version: '0.0.1'.
+	 
 ]
 
 { #category : #versions }
