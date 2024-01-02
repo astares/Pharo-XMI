@@ -2,12 +2,13 @@
 Baseline for Pharo-XMI project
 "
 Class {
-	#name : #BaselineOfXMI,
-	#superclass : #BaselineOf,
-	#category : #BaselineOfXMI
+	#name : 'BaselineOfXMI',
+	#superclass : 'BaselineOf',
+	#category : 'BaselineOfXMI',
+	#package : 'BaselineOfXMI'
 }
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfXMI >> baseline: spec [
 	<baseline>
 	spec
@@ -31,14 +32,14 @@ BaselineOfXMI >> baseline: spec [
 				group: 'Tools' with: #(#'XMI-Tools') ]
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfXMI >> xmlParserOn: spec [
 	spec
 		baseline: 'XMLParser'
       with: [ 
 			spec
 				loads: #('Core');
-				repository: 'github://pharo-contributions/XML-XMLParser:3.5.x/src' ]. 
+				repository: 'github://pharo-contributions/XML-XMLParser:3.6.1/src' ]. 
 				
 	spec 
 		project: 'XMLParser Tests' copyFrom: 'XMLParser' with: [ spec loads: #('Tests') ]; 	

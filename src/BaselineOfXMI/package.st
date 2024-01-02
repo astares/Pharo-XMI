@@ -1,1 +1,1 @@
-Package { #name : #BaselineOfXMI }
+Package { #name : 'BaselineOfXMI' }
