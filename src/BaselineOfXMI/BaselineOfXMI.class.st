@@ -39,7 +39,7 @@ BaselineOfXMI >> xmlParserOn: spec [
       with: [ 
 			spec
 				loads: #('Core');
-				repository: 'github://pharo-contributions/XML-XMLParser:3.6.1/src' ]. 
+				repository: 'github://pharo-contributions/XML-XMLParser:v3.6.1/src' ]. 
 				
 	spec 
 		project: 'XMLParser Tests' copyFrom: 'XMLParser' with: [ spec loads: #('Tests') ]; 	
