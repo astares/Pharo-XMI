@@ -34,10 +34,12 @@ XMIFile class >> on: anXMINode [
 
 { #category : #accessing }
 XMIFile >> rootNode [
+
 	^ rootNode
 ]
 
 { #category : #accessing }
 XMIFile >> rootNode: anObject [
+
 	rootNode := anObject
 ]

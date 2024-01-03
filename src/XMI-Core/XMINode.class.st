@@ -44,118 +44,128 @@ XMINode class >> prefix: aPrefix tagName: aTagName [
 ]
 
 { #category : #accessing }
-XMINode >> attributeAt: aKey [ 
+XMINode >> attributeAt: aKey [
 
-	^self attributes at: aKey
+	^ self attributes at: aKey
 ]
 
 { #category : #accessing }
 XMINode >> attributeAt: aKey ifAbsent: aBlock [
 
-	^self attributes at: aKey ifAbsent: aBlock
+	^ self attributes at: aKey ifAbsent: aBlock
 ]
 
 { #category : #accessing }
 XMINode >> attributes [
+
 	^ attributes
 ]
 
 { #category : #accessing }
 XMINode >> attributes: anObject [
+
 	attributes := anObject
 ]
 
 { #category : #accessing }
 XMINode >> children [
+
 	^ children
 ]
 
 { #category : #accessing }
 XMINode >> children: anObject [
+
 	children := anObject
 ]
 
 { #category : #'accessing - children' }
-XMINode >> childrenWithTagName: aString [ 
-	^self children select: [:each | each tagName = aString ]
+XMINode >> childrenWithTagName: aString [
+
+	^ self children select: [ :each | each tagName = aString ]
 ]
 
 { #category : #testing }
-XMINode >> hasAttribute: attributeName [ 
-	^self attributes includesKey: attributeName
-	
+XMINode >> hasAttribute: attributeName [
 
+	^ self attributes includesKey: attributeName
 ]
 
 { #category : #testing }
-XMINode >> hasAttribute: aKey withValue: aValue [ 
+XMINode >> hasAttribute: aKey withValue: aValue [
+
 	| v |
-	v := self attributes at: aKey ifAbsent: [ ^false ].
-	^v = aValue 
+	v := self attributes at: aKey ifAbsent: [ ^ false ].
+	^ v = aValue
 ]
 
 { #category : #initialization }
 XMINode >> initialize [
+
 	super initialize.
 	self prefix: ''.
 	self tagName: ''.
 	self attributes: OrderPreservingStringDictionary new.
-	self children: OrderedCollection new.
+	self children: OrderedCollection new
 ]
 
 { #category : #accessing }
 XMINode >> name [
-	^self attributes at: 'name' ifAbsent: ['']
+
+	^ self attributes at: 'name' ifAbsent: [ '' ]
 ]
 
 { #category : #accessing }
 XMINode >> prefix [
+
 	^ prefix
 ]
 
 { #category : #accessing }
 XMINode >> prefix: anObject [
+
 	prefix := anObject
 ]
 
 { #category : #'private - printing' }
 XMINode >> printAsNodeOn: aStream [
-	prefix
-		ifNotNil: [ aStream nextPutAll: self prefix.
-			prefix ifNotEmpty: [ aStream nextPut: $: ] ].
+
+	prefix ifNotNil: [
+		aStream nextPutAll: self prefix.
+		prefix ifNotEmpty: [ aStream nextPut: $: ] ].
 	^ aStream nextPutAll: self tagName asString
 ]
 
 { #category : #'private - printing' }
-XMINode >> printName: name on: aStream [	
-		 
-		name isEmpty ifTrue: [ ^self ].
-		aStream 
-			nextPutAll: '.name = "';					
-			nextPutAll: name asString;
-			nextPut: $"
+XMINode >> printName: name on: aStream [
 
-
+	name isEmpty ifTrue: [ ^ self ].
+	aStream
+		nextPutAll: '.name = "';
+		nextPutAll: name asString;
+		nextPut: $"
 ]
 
 { #category : #printing }
 XMINode >> printOn: aStream [
+
 	self printAsNodeOn: aStream.
-   self attributes
-				at: 'name'
-				ifPresent: [ :name | self printName: name on: aStream ]
+	self attributes
+		at: 'name'
+		ifPresent: [ :name | self printName: name on: aStream ]
 ]
 
 { #category : #accessing }
 XMINode >> referencesFromAttribute: aKey [
-	
-	|refIds|
+
+	| refIds |
 	refIds := self attributes at: aKey ifAbsent: ''.
-   ^refIds substrings: ' '.
+	^ refIds substrings: ' '
 ]
 
 { #category : #accessing }
-XMINode >> tagName [ 
+XMINode >> tagName [
+
 	^ tagName
 ]
 
@@ -167,10 +177,12 @@ XMINode >> tagName: anObject [
 
 { #category : #accessing }
 XMINode >> textString [
+
 	^ textString
 ]
 
 { #category : #accessing }
 XMINode >> textString: anObject [
+
 	textString := anObject
 ]
