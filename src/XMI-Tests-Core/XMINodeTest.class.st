@@ -21,7 +21,7 @@ XMINodeTest >> testChildrenWithTagName [
 		assert: childs size equals: 2.
 ]
 
-{ #category : #tests }
+{ #category : #'tests - instance creation' }
 XMINodeTest >> testInstantiationFromEmptyNode [
 
 	| node |
@@ -29,7 +29,7 @@ XMINodeTest >> testInstantiationFromEmptyNode [
 	self assert: node children isEmpty
 ]
 
-{ #category : #tests }
+{ #category : #'tests - instance creation' }
 XMINodeTest >> testInstantiationWithAttribute [
 
 	| node |
@@ -38,12 +38,12 @@ XMINodeTest >> testInstantiationWithAttribute [
 	self assert: (node attributes at: 'key')  equals: 'value'
 ]
 
-{ #category : #tests }
+{ #category : #'tests - instance creation' }
 XMINodeTest >> testInstantiationWithSubnodes [
 
 	| node |
 	node := XMINode from: '<XMI:Node key="value"><XMI:Subnode/></XMI:Node>'.
-	self 
+	self
 		assert: node children size equals: 1;
 		assert: (node children first) tagName  equals: 'Subnode'
 ]
@@ -56,7 +56,7 @@ XMINodeTest >> testPrefix [
 	self assert: node prefix equals: 'XMI'
 ]
 
-{ #category : #tests }
+{ #category : #'tests - printing' }
 XMINodeTest >> testPrintingAsNode [
 
 	| node |
@@ -64,15 +64,15 @@ XMINodeTest >> testPrintingAsNode [
 	self assert: node printString equals: 'XMI:Node'
 ]
 
-{ #category : #tests }
+{ #category : #'tests - printing' }
 XMINodeTest >> testPrintingAsNodeWithoutPrefix [
 
 	| node |
-	node := XMINode from: '<Node/>'. 
+	node := XMINode from: '<Node/>'.
 	self assert: node printString equals: 'Node'
 ]
 
-{ #category : #tests }
+{ #category : #'tests - printing' }
 XMINodeTest >> testPrintingWithName [
 
 	| node |
