@@ -1,5 +1,7 @@
 # Pharo-XMI
-XML Metadata Interchange for Pharo
+XML Metadata Interchange for [Pharo](https://www.pharo.org)
+
+[![Build](https://github.com/astares/Pharo-XMI/actions/workflows/build.yml/badge.svg)](https://github.com/astares/Pharo-XMI/actions/workflows/build.yml)
 
 Install
 ---------
