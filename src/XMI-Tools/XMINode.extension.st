@@ -1,48 +1,39 @@
 Extension { #name : #XMINode }
 
 { #category : #'*XMI-Tools' }
-XMINode >> gtInspectorAttributesIn: composite [
-    <gtInspectorPresentationOrder: 30>
-    <gtInspectorTag: #basic> 
-    <gtInspectorTag: #xmi> 
- 
- ^ (composite table)
-		title: 'Attributes';
-		display: [ self attributes associations ];
-		children: [ :each | 
-			(each value isDictionary) 
-				ifTrue: [ each value associations ] 
-				ifFalse: [ (each value isArray and: [ each value allSatisfy: #isDictionary ])
-						ifTrue: [ each value collectWithIndex: [:x :i | i -> x ] ]
-						ifFalse: [ #() ] ] ];
-		column: 'Key' 
-			evaluated: [:each | each key asString ];
-		column: 'Value' 
-			evaluated: [:each | each value asString]
-		 
+XMINode >> inspectionAttributes: aBuilder [
+	<inspectorPresentationOrder: 0 title: 'Attributes'> 
+	
+	^ aBuilder newTable		
+		addColumn: (SpStringTableColumn 
+			title: 'Key'
+			evaluated: [ :each | StObjectPrinter asTruncatedTextFrom: each key ])
+			beSortable;
+		addColumn: (SpStringTableColumn new  
+			title: 'Value'; 
+			evaluated: [ :each | StObjectPrinter asTruncatedTextFrom: each value ];
+			sortFunction: #printString ascending;
+			yourself);
+		items: self attributes associations;
+		yourself
 ]
 
 { #category : #'*XMI-Tools' }
-XMINode >> gtInspectorChildrenElementsIn: composite [
-    <gtInspectorPresentationOrder: 40>
-    <gtInspectorTag: #basic> 
-    <gtInspectorTag: #xmi> 
- 
- composite list
-    title: 'Children';
-    display: [ self children ];
-    when: [ self children notEmpty ]
+XMINode >> inspectionChildren: aBuilder [
+	<inspectorPresentationOrder: 0 title: 'Children'> 
+	
+	^ aBuilder newList		
+		items: self children;
+		display: [:each | each printString ];
+		yourself
 ]
 
 { #category : #'*XMI-Tools' }
-XMINode >> gtInspectorChildrenRecursiveElementsIn: composite [
-    <gtInspectorPresentationOrder: 20>
-    <gtInspectorTag: #basic> 
-    <gtInspectorTag: #xmi> 
- 
- composite tree
-	 rootsExpanded;
-    title: 'Hierarchy';
-    display: [ :root | self ];
-	 children: [:each | each children ]
+XMINode >> inspectionChildrenTree: aBuilder [
+	<inspectorPresentationOrder: 0 title: 'Nodes'> 
+	
+	^ aBuilder newTree	
+		roots: self children;
+		children: [ :aNode | aNode children ];
+		display: [ :aNode | aNode asString ] 
 ]
