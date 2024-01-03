@@ -1,13 +1,6 @@
 Extension { #name : #XMIFile }
 
 { #category : #'*XMI-Core-Examples-Model' }
-XMIFile class >> exampleArchimate [
-	<sampleInstance>
-
-	^ self fromURL: 'https://www.reflektis.com/repos/archimate-3.0.xmi'
-]
-
-{ #category : #'*XMI-Core-Examples-Model' }
 XMIFile class >> exampleEnterpriseArchitectXMI [
 	<example>
 
