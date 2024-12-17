@@ -1,6 +1,6 @@
-Extension { #name : #XMINode }
+Extension { #name : 'XMINode' }
 
-{ #category : #'*XMI-Tools' }
+{ #category : '*XMI-Tools' }
 XMINode >> inspectionAttributes: aBuilder [
 	<inspectorPresentationOrder: 0 title: 'Attributes'> 
 	
@@ -18,7 +18,7 @@ XMINode >> inspectionAttributes: aBuilder [
 		yourself
 ]
 
-{ #category : #'*XMI-Tools' }
+{ #category : '*XMI-Tools' }
 XMINode >> inspectionChildren: aBuilder [
 	<inspectorPresentationOrder: 0 title: 'Children'> 
 	
@@ -28,7 +28,7 @@ XMINode >> inspectionChildren: aBuilder [
 		yourself
 ]
 
-{ #category : #'*XMI-Tools' }
+{ #category : '*XMI-Tools' }
 XMINode >> inspectionChildrenTree: aBuilder [
 	<inspectorPresentationOrder: 0 title: 'Nodes'> 
 	
