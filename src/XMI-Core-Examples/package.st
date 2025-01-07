@@ -1,1 +1,1 @@
-Package { #name : #'XMI-Core-Examples' }
+Package { #name : 'XMI-Core-Examples' }

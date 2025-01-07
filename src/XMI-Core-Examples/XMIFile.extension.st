@@ -1,6 +1,6 @@
-Extension { #name : #XMIFile }
+Extension { #name : 'XMIFile' }
 
-{ #category : #'*XMI-Core-Examples-Model' }
+{ #category : '*XMI-Core-Examples-Model' }
 XMIFile class >> exampleEnterpriseArchitectXMI [
 	<example>
 
@@ -9,17 +9,25 @@ XMIFile class >> exampleEnterpriseArchitectXMI [
 		  inspect
 ]
 
-{ #category : #'*XMI-Core-Examples-Model' }
+{ #category : '*XMI-Core-Examples-Model' }
 XMIFile class >> exampleUML [
 	<sampleInstance>
 
 	^ self fromURL: 'http://www.omg.org/spec/UML/20131001/UML.xmi'
 ]
 
-{ #category : #'*XMI-Core-Examples-Model' }
+{ #category : '*XMI-Core-Examples-Model' }
 XMIFile class >> exampleVisualParadigm [
 	<sampleInstance>
 
 	^(self fromURL:
 		 'https://raw.githubusercontent.com/staruml/XMI/master/unittest-files/VP_XMI21.xmi')
+]
+
+{ #category : '*XMI-Core-Examples-Model' }
+XMIFile class >> exampleXMI [
+	<sampleInstance>
+
+	^ self fromURL: 'https://www.omg.org/spec/XMI/20131001/XMI-model.xmi'
+
 ]
