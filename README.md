@@ -6,6 +6,7 @@
 [![Pharo](https://img.shields.io/static/v1?style=for-the-badge&message=Pharo&color=3297d4&logo=Harbor&logoColor=FFFFFF&label=)](https://www.pharo.org) 
 
 [![Build](https://github.com/astares/Pharo-XMI/actions/workflows/build.yml/badge.svg)](https://github.com/astares/Pharo-XMI/actions/workflows/build.yml)
+[![codecov](https://codecov.io/gh/astares/Pharo-XMI/graph/badge.svg?token=83OLFT33BR)](https://codecov.io/gh/astares/Pharo-XMI)
 
 [![Pharo 9](https://img.shields.io/badge/Pharo-9.0-%23aac9ff.svg)](https://pharo.org/download)
 [![Pharo 10](https://img.shields.io/badge/Pharo-10-%23aac9ff.svg)](https://pharo.org/download)
