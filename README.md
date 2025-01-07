@@ -41,3 +41,9 @@ Screenshot
 ---------
 ![XMI](images/xmi_gt.png)
 
+# Other
+## Code coverage
+![Coverage](https://codecov.io/gh/astares/Pharo-XMI/graphs/sunburst.svg?token=83OLFT33BR)
+
+
+
